@@ -16,6 +16,15 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
+      body: const Center(
+        child:  Text(
+            'Hello World!',
+          style: TextStyle(
+            fontSize: 20.0,
+          ),
+        ),
+
+      ),
 
     );
   }
