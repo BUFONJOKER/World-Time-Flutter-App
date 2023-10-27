@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
       ),
       body: const Center(
         child:  Text(
-            'Hello World!',
+            'Hello World',
           style: TextStyle(
             fontSize: 20.0,
           ),
