@@ -9,6 +9,7 @@ void main() {
     routes:{
       '/home': (context)=> const Home(),
       '/location': (context)=> const ChooseLocation(),
+      '/loading': (context)=> const LoadingBar(),
     }
 
   ));
