@@ -12,15 +12,28 @@ class ChooseLocation extends StatefulWidget {
 class _ChooseLocationState extends State<ChooseLocation> {
   var counter = 0;
 
+  void getData () async {
+    var name = await Future.delayed(const Duration(seconds: 1),(){
+      return 'mani';
+    });
+
+    var age = await Future.delayed(const Duration(seconds: 1),(){
+      return 24;
+    });
+
+    log('$name - $age');
+  }
+
   @override
   initState(){
     super.initState();
+    getData();
     log('initState function ran');
   }
 
   @override
   Widget build(BuildContext context) {
-    log('build function run $counter times');
+
     return Scaffold(
 
       appBar: AppBar(
