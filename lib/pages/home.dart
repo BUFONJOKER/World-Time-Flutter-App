@@ -11,11 +11,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        backgroundColor: Colors.grey[900],
+
       appBar: AppBar(
         title: const Text('Home Screen'),
         centerTitle: true,
-        backgroundColor: Colors.black87,
+
       ),
       body: Column(
 
