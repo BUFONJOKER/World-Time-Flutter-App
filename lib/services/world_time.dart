@@ -9,6 +9,7 @@ class WorldTime{
   String? time; // the time in that location
   String? flag; // url to an asset flag icon
   String? url; // location url for api endpoint
+  bool? isDayTime; // true or false if daytime or not
 
   WorldTime({this.location, this.flag, this.url});
 
@@ -27,6 +28,9 @@ class WorldTime{
       // create DateTime object
       DateTime now = DateTime.parse(datetime);
       now = now.add(Duration(hours: int.parse(offset)));
+
+      isDayTime = now.hour > 6 && now.hour < 20  ? true : false;
+
       // log(now.toString());
       time = DateFormat.jm().format(now);
 

@@ -21,6 +21,7 @@ class _LoadingBarState extends State<LoadingBar> {
       'location': instance.location,
       'flag': instance.flag,
       'time': instance.time,
+      'isDayTime': instance.isDayTime,
     });
 
 
