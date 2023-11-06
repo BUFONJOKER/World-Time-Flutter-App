@@ -2,7 +2,6 @@ import 'package:http/http.dart';
 import 'dart:convert';
 import 'dart:developer';
 
-
 class WorldTime{
   String? location; // location name for the UI
   String? time; // the time in that location
@@ -17,14 +16,12 @@ class WorldTime{
       // log(data.toString());
       // get properties from data
       String datetime = data['datetime'];
-      String offset = data['utc_offset'].substring(1,3);
       // log(datetime);
       // log(offset);
       // create DateTime object
-      DateTime now = DateTime.parse(datetime);
-      now = now.add(Duration(hours: int.parse(offset)));
       // log('now $now');
-      isDayTime = now.hour > 6 && now.hour < 20  ? true : false;
+      int hour = int.parse(datetime.substring(11,13));
+      isDayTime = hour > 6 && hour < 20  ? true : false;
       // log(now.toString());
       // time = DateFormat.jm().format(now);
       int checkTime = datetime.substring(11,16).compareTo("12:00");
