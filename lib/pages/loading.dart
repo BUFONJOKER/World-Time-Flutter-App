@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:world_time/services/world_time.dart';
-
-
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoadingBar extends StatefulWidget {
   const LoadingBar({super.key});
@@ -42,11 +41,13 @@ class _LoadingBarState extends State<LoadingBar> {
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
       ),
-      body:  Center(
-        child: Text(
-          time,
-          style: const TextStyle(
-            fontSize: 20.0,
+      body: const Center(
+        child:  Padding(
+          padding: EdgeInsets.fromLTRB(0, 0, 0, 60),
+          child: SpinKitFadingCircle(
+            color: Colors.black,
+            size: 100.0,
+
           ),
         ),
       ),
