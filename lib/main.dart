@@ -5,7 +5,7 @@ import 'package:world_time/pages/choose_location.dart';
 
 void main() {
   runApp( MaterialApp(
-    initialRoute: "/home",
+    initialRoute: "/loading",
     routes:{
       '/home': (context)=> const Home(),
       '/location': (context)=> const ChooseLocation(),
