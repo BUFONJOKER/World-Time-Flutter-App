@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:world_time/services/world_time.dart';
-import 'dart:developer';
+
 
 
 class LoadingBar extends StatefulWidget {
@@ -16,11 +16,15 @@ class _LoadingBarState extends State<LoadingBar> {
 
   void setUpWorldTime() async {
     WorldTime instance = WorldTime(location: "Berlin", flag: "germany.png", url: "Asia/Karachi");
-    await instance.getTime();
-    setState(() {
-      time = instance.time.toString();
+     await instance.getTime();
+     if(!context.mounted) return;
+    Navigator.pushReplacementNamed(context, '/home',arguments: {
+      'location': instance.location,
+      'flag': instance.flag,
+      'time': instance.time,
     });
-    log(instance.time.toString());
+
+
   }
 
   @override
