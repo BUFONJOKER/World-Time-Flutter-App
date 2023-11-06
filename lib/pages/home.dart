@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:developer';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -17,8 +16,6 @@ class _HomeState extends State<Home> {
 
     data = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
 
-    log(data.toString());
-
     return  Scaffold(
 
       appBar: AppBar(
@@ -28,7 +25,7 @@ class _HomeState extends State<Home> {
       ),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(40.0),
+          padding: const EdgeInsets.fromLTRB(0, 200.0, 0, 0),
           child: Column(
             children: <Widget>[
               TextButton.icon(
@@ -36,7 +33,13 @@ class _HomeState extends State<Home> {
                   Navigator.pushNamed(context, '/location');
                 },
                 icon: const Icon(Icons.edit_location),
-                label: const Text('Edit Location'),
+                label: const Text(
+                    'Edit Location',
+                  style: TextStyle(
+                    fontSize: 20.0,
+                  ),
+                ),
+
               ),
 
               const SizedBox(height: 20.0,),
@@ -50,12 +53,12 @@ class _HomeState extends State<Home> {
 
               ),
 
-              const SizedBox(height: 20.0,),
+              const SizedBox(height: 30.0,),
 
               Text(
                 data!['time'],
                 style: const TextStyle(
-                  fontSize: 40.0,
+                  fontSize: 60.0,
                   color: Colors.red,
                 ),
               ),
